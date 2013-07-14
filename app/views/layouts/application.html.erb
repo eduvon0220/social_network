@@ -29,12 +29,38 @@
 
 
 <div class="container">
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+	<div class="row">
+		<div class="span3">
+			<ul class="nav nav-list">
+				<li class="active"><a href="#">Test1</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Test2</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Test3</a></li>
+				<li class="divider"></li>
+				<li><a href="#">Test3</a></li>
+			</ul>
+		</div>
+		<div class="span9">
+			<% flash.each do |type, message| %> 
+				<div class="alert <%= flash_class type %>">
+						<button class="close" data-dismiss="alert">x</button> 
+						<%= message %> 
+				</div>
+			<% end %> 
 
-    
-	<%= yield %>
+			<%= yield %>
+		</div>
+	</div>
 </div>
+
+<footer class="footer">
+	<div class="container">
+		<p>Designed and built with all the love in the world by @mdo and @fat.<p>
+		<p>Code licensed under Apache License v2.0, documentation under CC BY 3.0.</p>
+		<p>Glyphicons Free licensed under CC BY 3.0.</p>
+	</div>
+</footer>
 
 </body>
 </html>
